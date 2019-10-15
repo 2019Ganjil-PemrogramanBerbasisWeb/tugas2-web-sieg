@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="zxx" class="no-js">
 
@@ -18,8 +21,8 @@
 	<title>Karma Shop</title>
 
 	<!--
-		CSS
-		============================================= -->
+            CSS
+            ============================================= -->
 	<link rel="stylesheet" href="css/linearicons.css">
 	<link rel="stylesheet" href="css/owl.carousel.css">
 	<link rel="stylesheet" href="css/themify-icons.css">
@@ -49,7 +52,7 @@
 					<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
 						<ul class="nav navbar-nav menu_nav ml-auto">
 							<li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
-							<li class="nav-item submenu dropdown active">
+							<li class="nav-item submenu dropdown">
 								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
 								 aria-expanded="false">Shop</a>
 								<ul class="dropdown-menu">
@@ -57,7 +60,7 @@
 									<li class="nav-item"><a class="nav-link" href="single-product.html">Detail Produk</a></li>
 									<li class="nav-item"><a class="nav-link" href="checkout.html">Checkout Belanja</a></li>
 									<li class="nav-item"><a class="nav-link" href="cart.html">Keranjang Belanja</a></li>
-									<li class="nav-item active"><a class="nav-link" href="confirmation.html">Persetujuan</a></li>
+									<li class="nav-item"><a class="nav-link" href="confirmation.html">Persetujuan</a></li>
 								</ul>
 							</li>
 							<li class="nav-item submenu dropdown">
@@ -72,12 +75,12 @@
 								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
 								 aria-expanded="false">Akun</a>
 								<ul class="dropdown-menu">
-									<li class="nav-item"><a class="nav-link" href="login.html">Login/Daftar</a></li>
+									<li class="nav-item"><a class="nav-link" href="login.html"><?php echo $_SESSION = ['name'] ?></a></li>
 									<li class="nav-item"><a class="nav-link" href="tracking.html">Lacak Pesanan</a></li>
 									<li class="nav-item"><a class="nav-link" href="elements.html">Riwayat</a></li>
 								</ul>
 							</li>
-							<li class="nav-item"><a class="nav-link" href="contact.html">Bantuan</a></li>
+							<li class="nav-item active"><a class="nav-link" href="contact.html">Bantuan</a></li>
 						</ul>
 						<ul class="nav navbar-nav navbar-right">
 							<li class="nav-item"><a href="#" class="cart"><span class="ti-bag"></span></a></li>
@@ -106,10 +109,10 @@
 		<div class="container">
 			<div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
 				<div class="col-first">
-					<h1>Persetujuan</h1>
+					<h1>Bantuan Us</h1>
 					<nav class="d-flex align-items-center">
 						<a href="index.php">Home<span class="lnr lnr-arrow-right"></span></a>
-						<a href="category.html">Persetujuan</a>
+						<a href="category.html">Bantuan</a>
 					</nav>
 				</div>
 			</div>
@@ -117,118 +120,60 @@
 	</section>
 	<!-- End Banner Area -->
 
-	<!--================Order Details Area =================-->
-	<section class="order_details section_gap">
+	<!--================Bantuan Area =================-->
+	<section class="contact_area section_gap_bottom">
 		<div class="container">
-			<h3 class="title_confirmation">Terima kasih. Barang anda sedang disiapkan :) </h3>
-			<div class="row order_d_inner">
-				<div class="col-lg-6">
-					<div class="details_item">
-						<h4>Detail Pesanan</h4>
-						<ul class="list">
-							<li><a href="#"><span>Nomor Order</span> : 60235</a></li>
-							<li><a href="#"><span>Tanggal </span> : 12 Oktober 2019</a></li>
-							<li><a href="#"><span>Total </span> : Rp 150.000,00</a></li>
-							<li><a href="#"><span>Metode Pembayaran</span> : Go-Pay</a></li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-lg-6">
-					<div class="details_item">
-						<h4>Alamat</h4>
-						<ul class="list">
-							<li><a href="#"><span>Jalan</span> : Baratajaya X/65</a></li>
-							<li><a href="#"><span>Kota</span> : Surabaya</a></li>
-							<li><a href="#"><span>Kode Pos  </span> : 60234</a></li>
-						</ul>
-					</div>
-				</div>
+			<div id="mapBox" class="mapBox" data-lat="40.701083" data-lon="-74.1522848" data-zoom="13" data-info="PO Box CT16122 Collins Street West, Victoria 8007, Australia."
+			 data-mlat="40.701083" data-mlon="-74.1522848">
 			</div>
-			<div class="order_details_table">
-				<h2>Detail Order</h2>
-				<div class="table-responsive">
-					<table class="table">
-						<thead>
-							<tr>
-								<th scope="col">Product</th>
-								<th scope="col">Quantity</th>
-								<th scope="col">Total</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>
-									<p>Paket Ceria</p>
-								</td>
-								<td>
-									<h5>x 01</h5>
-								</td>
-								<td>
-									<p>Rp. 70.000</p>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<p>Paket Panas</p>
-								</td>
-								<td>
-									<h5>x 01</h5>
-								</td>
-								<td>
-									<p>Rp. 60.000</p>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<p>Paket Sehat</p>
-								</td>
-								<td>
-									<h5>x 01</h5>
-								</td>
-								<td>
-									<p>Rp. 40.000</p>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<h4>Subtotal</h4>
-								</td>
-								<td>
-									<h5></h5>
-								</td>
-								<td>
-									<p>Rp. 170.000</p>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<h4>Ongkir</h4>
-								</td>
-								<td>
-									<h5></h5>
-								</td>
-								<td>
-									<p>Ongkos : Rp. 10.000,00	</p>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<h4>Total</h4>
-								</td>
-								<td>
-									<h5></h5>
-								</td>
-								<td>
-									<p>Total : Rp. 180.000</p>
-								</td>
-							</tr>
-						</tbody>
-					</table>
+			<div class="row">
+				<div class="col-lg-3">
+					<div class="contact_info">
+						<div class="info_item">
+							<i class="lnr lnr-home"></i>
+							<h6>Surabaya,Indonesia</h6>
+							<p>Klampis Jaya 68, 60273</p>
+						</div>
+						<div class="info_item">
+							<i class="lnr lnr-phone-handset"></i>
+							<h6><a href="#">+62 082546273887</a></h6>
+							<p>Senin - Jumat</p>
+							<p>Jam 6 - Jam 10</p>
+						</div>
+						<div class="info_item">
+							<i class="lnr lnr-envelope"></i>
+							<h7><a href="#">NutriService@gmail.com</a></h6>
+							<p>Kontak Kita :)</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-9">
+					<form class="row contact_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
+						<div class="col-md-6">
+							<div class="form-group">
+								<input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Nama Anda'">
+							</div>
+							<div class="form-group">
+								<input type="email" class="form-control" id="email" name="email" placeholder="Enter email address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email'">
+							</div>
+							<div class="form-group">
+								<input type="text" class="form-control" id="subject" name="subject" placeholder="Enter Subject" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Subject'">
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<textarea class="form-control" name="message" id="message" rows="1" placeholder="Enter Message" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Masukkan Pesan'"></textarea>
+							</div>
+						</div>
+						<div class="col-md-12 text-right">
+							<button type="submit" value="submit" class="primary-btn">Kirim Pesan</button>
+						</div>
+					</form>
 				</div>
 			</div>
 		</div>
 	</section>
-	<!--================End Order Details Area =================-->
+	<!--================Bantuan Area =================-->
 
 	<!-- start footer Area -->
 	<footer class="footer-area section_gap">
@@ -310,7 +255,37 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 	</footer>
 	<!-- End footer Area -->
 
+	<!--================Bantuan Success and Error message Area =================-->
+	<div id="success" class="modal modal-message fade" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<i class="fa fa-close"></i>
+					</button>
+					<h2>Thank you</h2>
+					<p>Your message is successfully sent...</p>
+				</div>
+			</div>
+		</div>
+	</div>
 
+	<!-- Modals error -->
+
+	<div id="error" class="modal modal-message fade" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<i class="fa fa-close"></i>
+					</button>
+					<h2>Sorry !</h2>
+					<p> Something went wrong </p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--================End Bantuan Success and Error message Area =================-->
 
 
 	<script src="js/vendor/jquery-2.2.4.min.js"></script>
