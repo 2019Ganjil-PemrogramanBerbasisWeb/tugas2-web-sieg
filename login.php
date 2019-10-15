@@ -1,7 +1,15 @@
 <?php
 session_start();
-require_once "controller/conn.php";
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "nutribox";
 
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+    die("connection_failed  " . $conn->connect_error);
+}
 	if (isset($_SESSION['user_id'])) {
 		header('Location: ./index.php');
 		exit();
@@ -11,7 +19,6 @@ require_once "controller/conn.php";
     $r_email = "";
 
     if (isset($_POST['register'])) {
-        include 'controller/conn.php';
 
             $name = $conn->real_escape_string($_POST['name']);
             $email = $conn->real_escape_string($_POST['email']);
@@ -44,40 +51,53 @@ require_once "controller/conn.php";
             
                     else {
                         $hash = password_hash($password,PASSWORD_DEFAULT);
-                        $conn->query( "INSERT INTO user (name,email,password) 
-                        Values ('$name','$email','$hash')");
+                        $conn->query( "INSERT INTO `user`(`id`, `name`, `email`, `password`) 
+                        Values ('','$name','$email','$hash')");
                         header("location: ./index.php"); }
 			}
-	elseif (isset($_POST['login'])) {
-   if(empty($_POST['user_id'])){
-			$msg="Tolong Isi User ID";
-		}else {
-		$name = $conn->real_escape_string($_POST['name']);
-		$username = $conn->real_escape_string($_POST['username']);
-		$Date = $conn->real_escape_string($_POST['date']);
-		$time = $conn->real_escape_string($_POST['time']);
-		$user_id  = $conn->real_escape_string($_POST['user_id']);
-		function ubahtanggal($Date){
-			$pisah=explode('/', $Date);
-			$larik = array($pisah[2],$pisah[0],$pisah[1]);
-			$satukan = implode('-', $larik);
-			return $satukan;
-		}
-
-			if (!empty($_POST['name'])) {
-			$conn->query( "UPDATE attendance SET subject='$name' where id=$user_id");
-			}
-			if (!empty($_POST['date'])) {
-			$Date = ubahTanggal($Date);
-			$conn->query( "UPDATE attendance SET, date='$Date' where id=$user_id");
-			}
-			if (!empty($_POST['time'])) {
-			$conn->query( "UPDATE attendance SET , time='$time' where id=$user_id");
-			}
-			if (!empty($_POST['username'])) {
-			$conn->query( "UPDATE attendance SET , name='$username' where id=$user_id");
-			}
-  }}
+	 elseif (isset($_POST['login'])) {
+	 		$password = $conn->real_escape_string($_POST['password']);
+	 		$username = $conn->real_escape_string($_POST['username']);
+	 		if (empty($username)) {
+	 			$msg = "Tolong Tulis Username Anda";
+	 		}
+	 		elseif (empty($password)) {
+	 			$msg = "Tolong Tulis Password anda";
+	 		}
+	 		else {
+	 		$stmt = $conn->prepare("SELECT * FROM user WHERE name = ?");
+	 		$stmt->bind_param('s', $_POST['username']);
+	 		$stmt->execute();
+	 		$result = $stmt->get_result();
+	 		$user = $result->fetch_object();
+	 		if (mysqli_num_rows($result) > 0) {
+	 		if ( password_verify( $_POST['password'], $user->password ) ) {
+	 			$_SESSION['name'] = $user->name;
+	 			$_SESSION['email'] = $user->email;
+	 			$_SESSION['user_id'] = $user->id;
+			
+	 			header("location: ./index.php");
+	 		} else { $msg="Password atau email salah";}
+	 		}
+	 		else {
+	 			$stmt = $conn->prepare("SELECT * FROM user WHERE email = ?");
+	 			$stmt->bind_param('s', $_POST['username']);
+	 			$stmt->execute();
+	 			$result = $stmt->get_result();
+	 			$user = $result->fetch_object();
+	 			if (mysqli_num_rows($result) > 0) {
+					
+	 		if ( password_verify( $_POST['password'], $user->password ) ) {
+	 			$_SESSION['name'] = $user->name;
+	 			$_SESSION['email'] = $user->email;
+	 			$_SESSION['user_id'] = $user->id;
+	
+	 			header("location: ./dashboard/");
+	 		} else { $msg="Password atau email salah";}
+	 		} else { $msg="Password atau email salah";}
+	 		}
+	 		}
+	 	}
 ?>
 <!DOCTYPE html>
 <html lang="zxx" class="no-js">
@@ -89,7 +109,7 @@ require_once "controller/conn.php";
 	<meta name="description" content="">
 	<meta name="keywords" content="">
 	<meta charset="UTF-8">
-	<title>Karma Shop</title>
+	<title>Nutribox | 2019</title>
 
 	<link rel="stylesheet" href="css/linearicons.css">
 	<link rel="stylesheet" href="css/owl.carousel.css">
@@ -107,7 +127,7 @@ require_once "controller/conn.php";
 		<div class="main_menu">
 			<nav class="navbar navbar-expand-lg navbar-light main_box">
 				<div class="container">
-					<a class="navbar-brand logo_h" href="index.html"><img src="img/logo.png" alt="" height="73px"></a>
+					<a class="navbar-brand logo_h" href="index.php"><img src="img/logo.png" alt="" height="73px"></a>
 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
 					 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 						<span class="icon-bar"></span>
@@ -116,36 +136,36 @@ require_once "controller/conn.php";
 					</button>
 					<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
 						<ul class="nav navbar-nav menu_nav ml-auto">
-							<li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+							<li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
 							<li class="nav-item submenu dropdown">
 								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
 								 aria-expanded="false">Shop</a>
 								<ul class="dropdown-menu">
-									<li class="nav-item"><a class="nav-link" href="category.html">Kategori Belanja</a></li>
-									<li class="nav-item"><a class="nav-link" href="single-product.html">Detail Produk</a></li>
-									<li class="nav-item"><a class="nav-link" href="checkout.html">Checkout Belanja</a></li>
-									<li class="nav-item"><a class="nav-link" href="cart.html">Keranjang Belanja</a></li>
-									<li class="nav-item"><a class="nav-link" href="confirmation.html">Persetujuan</a></li>
+									<li class="nav-item"><a class="nav-link" href="category.php">Kategori Belanja</a></li>
+									<li class="nav-item"><a class="nav-link" href="single-product.php">Detail Produk</a></li>
+									<li class="nav-item"><a class="nav-link" href="checkout.php">Checkout Belanja</a></li>
+									<li class="nav-item"><a class="nav-link" href="cart.php">Keranjang Belanja</a></li>
+									<li class="nav-item"><a class="nav-link" href="confirmation.php">Persetujuan</a></li>
 								</ul>
 							</li>
 							<li class="nav-item submenu dropdown">
 								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
 								 aria-expanded="false">Info</a>
 								<ul class="dropdown-menu">
-									<li class="nav-item"><a class="nav-link" href="blog.html">Info Nutrisi</a></li>
-									<li class="nav-item"><a class="nav-link" href="single-blog.html">Info Nutribox</a></li>
+									<li class="nav-item"><a class="nav-link" href="blog.php">Info Nutrisi</a></li>
+									<li class="nav-item"><a class="nav-link" href="single-blog.php">Info Nutribox</a></li>
 								</ul>
 							</li>
 							<li class="nav-item submenu dropdown active">
 								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
 								 aria-expanded="false">Akun</a>
 								<ul class="dropdown-menu">
-									<li class="nav-item active"><a class="nav-link" href="login.html">Login/Daftar</a></li>
-									<li class="nav-item"><a class="nav-link" href="tracking.html">Lacak Pesanan</a></li>
-									<li class="nav-item"><a class="nav-link" href="elements.html">Riwayat</a></li>
+									<li class="nav-item active"><a class="nav-link" href="login.php">Login/Daftar</a></li>
+									<li class="nav-item"><a class="nav-link" href="tracking.php">Lacak Pesanan</a></li>
+									<li class="nav-item"><a class="nav-link" href="elements.php">Riwayat</a></li>
 								</ul>
 							</li>
-							<li class="nav-item"><a class="nav-link" href="contact.html">Bantuan</a></li>
+							<li class="nav-item"><a class="nav-link" href="contact.php">Bantuan</a></li>
 						</ul>
 						<ul class="nav navbar-nav navbar-right">
 							<li class="nav-item"><a href="#" class="cart"><span class="ti-bag"></span></a></li>
@@ -173,8 +193,8 @@ require_once "controller/conn.php";
 				<div class="col-first">
 					<h1>Login/Register</h1>
 					<nav class="d-flex align-items-center">
-						<a href="index.html">Home<span class="lnr lnr-arrow-right"></span></a>
-						<a href="category.html">Login/Register</a>
+						<a href="index.php">Home<span class="lnr lnr-arrow-right"></span></a>
+						<a href="category.php">Login/Register</a>
 					</nav>
 				</div>
 			</div>
@@ -182,27 +202,27 @@ require_once "controller/conn.php";
 	</section>
 	<section class="login_box_area section_gap">
 		<div class="container">
-			<div class="row">
-			<?php if ($msg != "") { ?> <div class="alert alert-warning" role="alert"><?php echo $msg;?>
+		<?php if ($msg != "") { ?> <div class="alert alert-warning" role="alert"><?php echo $msg;?>
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div><?php }?>
+			<div class="row">
 				<div class="col-lg-6">
 						<div class="login_form_inner">
 							<h3>Daftar Nutribox</h3>
-							<form class="row login_form" action="login.php" method="post" id="register" name="register" novalidate="novalidate">
+							<form class="row login_form" action="login.php" method="post" id="register" name="register">
 								<div class="col-md-12 form-group">
-									<input type="text" class="form-control" id="name" name="name" placeholder="Nama" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Nama'">
+									<input type="text" minlength="3" class="form-control" id="name" name="name" placeholder="Nama" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Nama'">
 								</div>
 								<div class="col-md-12 form-group">
-									<input type="text" class="form-control" id="email" name="email" placeholder="Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email'">
+									<input type="text" minlength="10" class="form-control" id="email" name="email" placeholder="Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email'">
 								</div>
 								<div class="col-md-12 form-group">
-									<input type="text" class="form-control" id="password" name="password" placeholder="Password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Password'">
+									<input type="password" pattern=".{8,}"   required title="minimal 8 karakter" class="form-control" id="password" name="password" placeholder="Password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Password'">
 								</div>
 								<div class="col-md-12 form-group">
-									<input type="text" class="form-control" id="cpassword" name="cpassword" placeholder="Tulis Ulang Password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Tulis Ulang Password'">
+									<input type="password" pattern=".{8,}"   required title="minimal 8 karakter" minlength="8" class="form-control" id="cpassword" name="cpassword" placeholder="Tulis Ulang Password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Tulis Ulang Password'">
 								</div>
 								<div class="col-md-12 form-group">
 									<button type="submit" value="submit" name="register" id="register" class="primary-btn">Daftar</button>
@@ -213,12 +233,12 @@ require_once "controller/conn.php";
 				<div class="col-lg-6">
 					<div class="login_form_inner">
 						<h3>Login Nutribox</h3>
-						<form class="row login_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate" name="login" id="login">
+						<form class="row login_form" action="login.php" method="post" id="contactForm" name="login" id="login">
 							<div class="col-md-12 form-group">
-								<input type="text" class="form-control" id="name" name="name" placeholder="Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email'">
+								<input type="text" class="form-control" id="email" name="email" placeholder="Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email'">
 							</div>
 							<div class="col-md-12 form-group">
-								<input type="text" class="form-control" id="name" name="name" placeholder="Password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Password'">
+								<input type="password" pattern=".{8,}"   required title="minimal 8 karakter" class="form-control" id="password" name="password" placeholder="Password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Password'">
 							</div>
 							<div class="col-md-12 form-group">
 								<div class="creat_account">

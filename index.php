@@ -28,7 +28,7 @@
 		<div class="main_menu">
 			<nav class="navbar navbar-expand-lg navbar-light main_box">
 				<div class="container">
-					<a class="navbar-brand logo_h" href="index.html"><img src="img/logo.png" alt="" height="73px"></a>
+					<a class="navbar-brand logo_h" href="index.php"><img src="img/logo.png" alt="" height="73px"></a>
 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
 					 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 						<span class="icon-bar"></span>
@@ -37,7 +37,7 @@
 					</button>
 					<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
 						<ul class="nav navbar-nav menu_nav ml-auto">
-							<li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
+							<li class="nav-item active"><a class="nav-link" href="index.php">Home</a></li>
 							<li class="nav-item submenu dropdown">
 								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
 								 aria-expanded="false">Belanja</a>
@@ -263,7 +263,7 @@
 						<div class="single-product">
 							<img class="img-fluid" src="img/product/c10.jpg" alt="">
 							<div class="product-details">
-								<h6>Produk Nutribox</h6>
+								<h6>Dendeng Ikan</h6>
 								<div class="price">
 									<h6>Rp. 80.000</h6>
 									<h6 class="l-through">Rp. 160.000</h6>
@@ -295,7 +295,7 @@
 						<div class="single-product">
 							<img class="img-fluid" src="img/product/c11.jpg" alt="">
 							<div class="product-details">
-								<h6>Produk Nutribox</h6>
+								<h6>Capjay Bernutrisi</h6>
 								<div class="price">
 									<h6>Rp. 80.000</h6>
 									<h6 class="l-through">Rp. 160.000</h6>
@@ -327,7 +327,7 @@
 						<div class="single-product">
 							<img class="img-fluid" src="img/product/c12.jpg" alt="">
 							<div class="product-details">
-								<h6>Produk Nutribox</h6>
+								<h6>Sarden Ikan</h6>
 								<div class="price">
 									<h6>Rp. 80.000</h6>
 									<h6 class="l-through">Rp. 160.000</h6>
@@ -358,7 +358,7 @@
 						<div class="single-product">
 							<img class="img-fluid" src="img/product/c13.jpg" alt="">
 							<div class="product-details">
-								<h6>Produk Nutribox</h6>
+								<h6>Nasi Goreng Kacang Polong</h6>
 								<div class="price">
 									<h6>Rp. 80.000</h6>
 									<h6 class="l-through">Rp. 160.000</h6>
@@ -595,7 +595,7 @@
 					
 					<div class="col-lg-3 col-md-6">
 						<div class="single-product">
-							<img class="img-fluid" src="img/product/c20.jpg" alt="">
+							<img class="img-fluid" src="img/product/c14.jpg" alt="">
 							<div class="product-details">
 								<h6>Produk Nutribox</h6>
 								<div class="price">
