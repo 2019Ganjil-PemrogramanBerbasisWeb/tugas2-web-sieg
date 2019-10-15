@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="zxx" class="no-js">
 
@@ -61,7 +64,7 @@
 								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
 								 aria-expanded="false">Akun</a>
 								<ul class="dropdown-menu">
-									<li class="nav-item"><a class="nav-link" href="#">Login/Daftar</a></li>
+									<li class="nav-item"><a class="nav-link" href="#"><?php echo $_SESSION['name']; ?></a></li>
 									<li class="nav-item"><a class="nav-link" href="#">Lacak pesanan</a></li>
 									<li class="nav-item"><a class="nav-link" href="#">Riwayat</a></li>
 								</ul>

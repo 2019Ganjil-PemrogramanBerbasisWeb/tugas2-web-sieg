@@ -92,7 +92,7 @@ if ($conn->connect_error) {
 	 			$_SESSION['email'] = $user->email;
 	 			$_SESSION['user_id'] = $user->id;
 	
-	 			header("location: ./dashboard/");
+	 			header("location: ./index.php");
 	 		} else { $msg="Password atau email salah";}
 	 		} else { $msg="Password atau email salah";}
 	 		}
@@ -235,7 +235,7 @@ if ($conn->connect_error) {
 						<h3>Login Nutribox</h3>
 						<form class="row login_form" action="login.php" method="post" id="contactForm" name="login" id="login">
 							<div class="col-md-12 form-group">
-								<input type="text" class="form-control" id="email" name="email" placeholder="Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email'">
+								<input type="text" class="form-control" id="username" name="username" placeholder="Username" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email'">
 							</div>
 							<div class="col-md-12 form-group">
 								<input type="password" pattern=".{8,}"   required title="minimal 8 karakter" class="form-control" id="password" name="password" placeholder="Password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Password'">
