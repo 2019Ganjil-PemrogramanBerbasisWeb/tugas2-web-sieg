@@ -75,9 +75,18 @@ session_start();
 								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
 								 aria-expanded="false">Akun</a>
 								<ul class="dropdown-menu">
-									<li class="nav-item"><a class="nav-link" href="login.html"><?php echo $_SESSION = ['name'] ?></a></li>
-									<li class="nav-item"><a class="nav-link" href="tracking.html">Lacak Pesanan</a></li>
-									<li class="nav-item"><a class="nav-link" href="elements.html">Riwayat</a></li>
+								<?php if(isset($_SESSION['name'])){ 
+									?>
+									<li class="nav-item"><a class="nav-link" href="user.php"><?php echo $_SESSION['name']; ?></a></li>
+									<?php
+									} else{
+									?>
+									<li class="nav-item"><a class="nav-link" href="login.php"><?php echo "Daftar/Login"; ?></a></li>
+									<?php
+										
+									}?>
+									<li class="nav-item"><a class="nav-link" href="#">Lacak pesanan</a></li>
+									<li class="nav-item"><a class="nav-link" href="#">Riwayat</a></li>
 								</ul>
 							</li>
 							<li class="nav-item"><a class="nav-link" href="contact.html">Bantuan</a></li>
