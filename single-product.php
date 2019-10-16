@@ -60,6 +60,16 @@
 								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
 								 aria-expanded="false">Akun</a>
 								<ul class="dropdown-menu">
+                                <?php if(isset($_SESSION['name'])){ 
+									?>
+									<li class="nav-item"><a class="nav-link" href="user.php"><?php echo $_SESSION['name']; ?></a></li>
+									<?php
+									} else{
+									?>
+									<li class="nav-item"><a class="nav-link" href="login.php"><?php echo "Daftar/Login"; ?></a></li>
+									<?php
+										
+									}?>
 									<li class="nav-item"><a class="nav-link" href="login.php">Login/Daftar</a></li>
 									<li class="nav-item"><a class="nav-link" href="tracking.php">Lacak Pesanan</a></li>
 									<li class="nav-item"><a class="nav-link" href="elements.php">Riwayat</a></li>
