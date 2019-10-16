@@ -57,10 +57,10 @@ session_start();
 								 aria-expanded="false">Belanja</a>
 								<ul class="dropdown-menu">
 									<li class="nav-item active"><a class="nav-link" href="category.html">kategori belanja</a></li>
-									<li class="nav-item"><a class="nav-link" href="single-product.html">detail produk</a></li>
-									<li class="nav-item"><a class="nav-link" href="checkout.html">checkout belanja</a></li>
-									<li class="nav-item"><a class="nav-link" href="cart.html">keranjang belanja</a></li>
-									<li class="nav-item"><a class="nav-link" href="confirmation.html">persetujuan</a></li>
+									<li class="nav-item"><a class="nav-link" href="./single-product.php">detail produk</a></li>
+									<li class="nav-item"><a class="nav-link" href="./checkout.php">checkout belanja</a></li>
+									<li class="nav-item"><a class="nav-link" href="./cart.php">keranjang belanja</a></li>
+									<li class="nav-item"><a class="nav-link" href="./confirmation.php">persetujuan</a></li>
 								</ul>
 							</li>
 							<li class="nav-item submenu dropdown">
@@ -81,7 +81,7 @@ session_start();
 									<?php
 									} else{
 									?>
-									<li class="nav-item"><a class="nav-link" href="login.php"><?php echo "Daftar/Login"; ?></a></li>
+									<li class="nav-item"><a class="nav-link" href="./login.php"><?php echo "Daftar/Login"; ?></a></li>
 									<?php
 										
 									}?>
