@@ -58,7 +58,7 @@ session_start();
 								<ul class="dropdown-menu">
 									<li class="nav-item"><a class="nav-link" href="category.html">Kategori Belanja</a></li>
 									<li class="nav-item"><a class="nav-link" href="single-product.html">Detail Produk</a></li>
-									<li class="nav-item active"><a class="nav-link" href="checkout.html">Product Checkout</a></li>
+									<li class="nav-item active"><a class="nav-link" href="./checkout.php">Checkout Belanja</a></li>
 									<li class="nav-item"><a class="nav-link" href="cart.html">Keranjang Belanja</a></li>
 									<li class="nav-item"><a class="nav-link" href="confirmation.html">Persetujuan</a></li>
 								</ul>

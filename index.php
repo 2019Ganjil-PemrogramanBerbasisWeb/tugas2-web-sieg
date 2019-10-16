@@ -45,10 +45,10 @@ session_start();
 								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
 								 aria-expanded="false">Belanja</a>
 								<ul class="dropdown-menu">
-									<li class="nav-item"><a class="nav-link" href="#">Kategori Belanja</a></li>
+									<li class="nav-item"><a class="nav-link" href="./category.php">Kategori Belanja</a></li>
 									<li class="nav-item"><a class="nav-link" href="#">Detail Produk</a></li>
-									<li class="nav-item"><a class="nav-link" href="#">Checkout Belanja</a></li>
-									<li class="nav-item"><a class="nav-link" href="#">Keranjang Belanja</a></li>
+									<li class="nav-item"><a class="nav-link" href="./checkout.php">Checkout Belanja</a></li>
+									<li class="nav-item"><a class="nav-link" href="./cart.php">Keranjang Belanja</a></li>
 									<li class="nav-item"><a class="nav-link" href="#">Persetujuan</a></li>
 								</ul>
 							</li>
