@@ -24,7 +24,6 @@ session_start();
 	<link rel="stylesheet" href="css/magnific-popup.css">
 	<link rel="stylesheet" href="css/main.css">
 </head>
-
 <body>
 
 	<header class="header_area sticky-header">
