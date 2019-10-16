@@ -51,7 +51,7 @@ session_start();
 					<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
 						<ul class="nav navbar-nav menu_nav ml-auto">
-							<li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
+							<li class="nav-item"><a class="nav-link" href="./index.php">Home</a></li>
 							<li class="nav-item submenu dropdown active">
 								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
 								 aria-expanded="false">Belanja</a>
@@ -120,7 +120,7 @@ session_start();
 				<div class="col-first">
 					<h1>Kategori Belanja page</h1>
 					<nav class="d-flex align-items-center">
-						<a href="index.php">Home<span class="lnr lnr-arrow-right"></span></a>
+						<a href="./index.php">Home<span class="lnr lnr-arrow-right"></span></a>
 						<a href="#">Shop</a>
 					</nav>
 				</div>
