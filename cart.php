@@ -60,7 +60,7 @@ session_start();
 									<li class="nav-item"><a class="nav-link" href="single-product.html">Detail Produk</a></li>
 									<li class="nav-item"><a class="nav-link" href="checkout.html">Checkout Belanja</a></li>
 									<li class="nav-item active"><a class="nav-link" href="cart.html">Keranjang Belanja</a></li>
-									<li class="nav-item"><a class="nav-link" href="confirmation.html">Persetujuan</a></li>
+									<li class="nav-item"><a class="nav-link" href="./confirmation.php">Persetujuan</a></li>
 								</ul>
 							</li>
 							<li class="nav-item submenu dropdown">

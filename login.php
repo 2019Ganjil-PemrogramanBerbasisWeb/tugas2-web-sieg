@@ -162,7 +162,7 @@ if ($conn->connect_error) {
 								<ul class="dropdown-menu">
                                 <?php if(isset($_SESSION['name'])){ 
 									?>
-									<li class="nav-item"><a class="nav-link" href="user.php"><?php echo $_SESSION['name']; ?></a></li>
+									<li class="nav-item active"><a class="nav-link" href="user.php"><?php echo $_SESSION['name']; ?></a></li>
 									<?php
 									} else{
 									?>
@@ -170,7 +170,7 @@ if ($conn->connect_error) {
 									<?php
 										
 									}?>
-									<li class="nav-item active"><a class="nav-link" href="login.php">Login/Daftar</a></li>
+									<li class="nav-item active"><a class="nav-link" href="user.php">Daftar/Login</a></li>
 									<li class="nav-item"><a class="nav-link" href="tracking.php">Lacak Pesanan</a></li>
 									<li class="nav-item"><a class="nav-link" href="elements.php">Riwayat</a></li>
 								</ul>
