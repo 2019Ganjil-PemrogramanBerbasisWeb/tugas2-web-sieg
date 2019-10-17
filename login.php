@@ -166,11 +166,9 @@ if ($conn->connect_error) {
 									<?php
 									} else{
 									?>
-									<li class="nav-item"><a class="nav-link" href="login.php"><?php echo "Daftar/Login"; ?></a></li>
+									<li class="nav-item active"><a class="nav-link" href="login.php"><?php echo "Daftar/Login"; ?></a></li>
 									<?php
-										
 									}?>
-									<li class="nav-item active"><a class="nav-link" href="user.php">Daftar/Login</a></li>
 									<li class="nav-item"><a class="nav-link" href="tracking.php">Lacak Pesanan</a></li>
 									<li class="nav-item"><a class="nav-link" href="elements.php">Riwayat</a></li>
 								</ul>
