@@ -249,7 +249,7 @@ session_start();
 						<!-- single product -->
 						<div class="col-lg-4 col-md-6">
 							<div class="single-product">
-								<img class="img-fluid" src="img/update/capcay.png" alt="">
+								<img class="img-fluid" src="./img/category/capcay.png" alt="">
 								<div class="product-details">
 									<h6>CapJay!</h6>
 									<div class="price">
@@ -280,7 +280,7 @@ session_start();
 						<!-- single product -->
 						<div class="col-lg-4 col-md-6">
 							<div class="single-product">
-								<img class="img-fluid" src="img/update/Dendeng.png" alt="">
+								<img class="img-fluid" src="img/category/Dendeng.png" alt="">
 								<div class="product-details">
 									<h6>Dendeng</h6>
 									<div class="price">
@@ -311,7 +311,7 @@ session_start();
 						<!-- single product -->
 						<div class="col-lg-4 col-md-6">
 							<div class="single-product">
-								<img class="img-fluid" src="img/update/Ikan Balado.png" alt="">
+								<img class="img-fluid" src="img/category/Ikan%20Balado.png" alt="">
 								<div class="product-details">
 									<h6>Ikan Balado</h6>
 									<div class="price">
@@ -342,7 +342,7 @@ session_start();
 						<!-- single product -->
 						<div class="col-lg-4 col-md-6">
 							<div class="single-product">
-								<img class="img-fluid" src="img/update/Nasgor.png" alt="">
+								<img class="img-fluid" src="img/category/Nasgor.png" alt="">
 								<div class="product-details">
 									<h6>Nasi Goreng Spesial</h6>
 									<div class="price">
@@ -373,7 +373,7 @@ session_start();
 						<!-- single product -->
 						<div class="col-lg-4 col-md-6">
 							<div class="single-product">
-								<img class="img-fluid" src="img/update/Pecel Ayam.png" alt="">
+								<img class="img-fluid" src="img/category/Pecel Ayam.png" alt="">
 								<div class="product-details">
 									<h6>Pecel Ayam</h6>
 									<div class="price">
@@ -404,7 +404,7 @@ session_start();
 						<!-- single product -->
 						<div class="col-lg-4 col-md-6">
 							<div class="single-product">
-								<img class="img-fluid" src="img/update/Rendang.png" alt="">
+								<img class="img-fluid" src="img/category/Rendang.png" alt="">
 								<div class="product-details">
 									<h6>Rendang</h6>
 									<div class="price">
