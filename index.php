@@ -46,10 +46,10 @@ session_start();
 								 aria-expanded="false">Belanja</a>
 								<ul class="dropdown-menu">
 									<li class="nav-item"><a class="nav-link" href="./category.php">Kategori Belanja</a></li>
-									<li class="nav-item"><a class="nav-link" href="#">Detail Produk</a></li>
+									<li class="nav-item"><a class="nav-link" href="./single-product.php">Detail Produk</a></li>
 									<li class="nav-item"><a class="nav-link" href="./checkout.php">Checkout Belanja</a></li>
 									<li class="nav-item"><a class="nav-link" href="./cart.php">Keranjang Belanja</a></li>
-									<li class="nav-item"><a class="nav-link" href="#">Persetujuan</a></li>
+									<li class="nav-item"><a class="nav-link" href="./confirmation.php">Persetujuan</a></li>
 								</ul>
 							</li>
 							<li class="nav-item submenu dropdown">
@@ -75,7 +75,7 @@ session_start();
 									<?php } ?>
 								</ul>
 							</li>
-							<li class="nav-item"><a class="nav-link" href="#">Bantuan</a></li>
+							<li class="nav-item"><a class="nav-link" href="./contact.php">Bantuan</a></li>
 						</ul>
 						<ul class="nav navbar-nav navbar-right">
 							<li class="nav-item"><a href="#" class="cart"><span class="ti-bag"></span></a></li>
@@ -109,7 +109,7 @@ session_start();
 									<h1>Nutribox <br>Hadir!!</h1>
 									<p>Jangan ribet ribet cari bahan untuk resep keluarga kalian, cukup pilih,pesan, antar dan boom, kamu bisa dapetin semua kebaikan gizi untuk keluarga kalian.</p>
 									<div class="add-bag d-flex align-items-center">
-										<a class="add-btn" href=""><span class="lnr lnr-cross"></span></a>
+										<a class="add-btn" href="./category.php"><span class="lnr lnr-cross"></span></a>
 										<span class="add-text text-uppercase">Belanja Sekarang</span>
 									</div>
 								</div>

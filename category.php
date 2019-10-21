@@ -51,16 +51,16 @@ session_start();
 					<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
 						<ul class="nav navbar-nav menu_nav ml-auto">
-							<li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
+							<li class="nav-item"><a class="nav-link" href="./index.php">Home</a></li>
 							<li class="nav-item submenu dropdown active">
 								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
 								 aria-expanded="false">Belanja</a>
 								<ul class="dropdown-menu">
-									<li class="nav-item active"><a class="nav-link" href="category.html">kategori belanja</a></li>
-									<li class="nav-item"><a class="nav-link" href="single-product.html">detail produk</a></li>
-									<li class="nav-item"><a class="nav-link" href="checkout.html">checkout belanja</a></li>
-									<li class="nav-item"><a class="nav-link" href="cart.html">keranjang belanja</a></li>
-									<li class="nav-item"><a class="nav-link" href="confirmation.html">persetujuan</a></li>
+									<li class="nav-item active"><a class="nav-link" href="./category.php">kategori belanja</a></li>
+									<li class="nav-item"><a class="nav-link" href="./single-product.php">detail produk</a></li>
+									<li class="nav-item"><a class="nav-link" href="./checkout.php">checkout belanja</a></li>
+									<li class="nav-item"><a class="nav-link" href="./cart.php">keranjang belanja</a></li>
+									<li class="nav-item"><a class="nav-link" href="./confirmation.php">persetujuan</a></li>
 								</ul>
 							</li>
 							<li class="nav-item submenu dropdown">
@@ -80,7 +80,7 @@ session_start();
 									<li class="nav-item"><a class="nav-link" href="tracking.php">Lacak pesanan</a></li>
 									<li class="nav-item"><a class="nav-link" href="history.php">Riwayat</a></li>
 									<li class="nav-item"><a class="nav-link" href="logout.php">Logout</a></li>
-									<?php } 
+									<?php }
 									else { ?>
 									<li class="nav-item"><a class="nav-link" href="login.php"><?php echo "Daftar/Login"; ?></a></li>
 									<?php } ?>
@@ -117,7 +117,7 @@ session_start();
 				<div class="col-first">
 					<h1>Kategori Belanja page</h1>
 					<nav class="d-flex align-items-center">
-						<a href="index.php">Home<span class="lnr lnr-arrow-right"></span></a>
+						<a href="./index.php">Home<span class="lnr lnr-arrow-right"></span></a>
 						<a href="#">Shop</a>
 					</nav>
 				</div>
@@ -246,7 +246,7 @@ session_start();
 						<!-- single product -->
 						<div class="col-lg-4 col-md-6">
 							<div class="single-product">
-								<a href = "a href = capjay.html"><img class="img-fluid" src="img/update/capcay.png" alt="">
+								<img class="img-fluid" src="./img/category/capcay.png" alt="">
 								<div class="product-details">
 									<h6>CapJay!</h6>
 									<div class="price">
@@ -277,7 +277,7 @@ session_start();
 						<!-- single product -->
 						<div class="col-lg-4 col-md-6">
 							<div class="single-product">
-								<img class="img-fluid" src="img/update/Dendeng.png" alt="">
+								<img class="img-fluid" src="img/category/Dendeng.png" alt="">
 								<div class="product-details">
 									<h6>Dendeng</h6>
 									<div class="price">
@@ -308,7 +308,7 @@ session_start();
 						<!-- single product -->
 						<div class="col-lg-4 col-md-6">
 							<div class="single-product">
-								<img class="img-fluid" src="img/update/Ikan Balado.png" alt="">
+								<img class="img-fluid" src="img/category/Ikan%20Balado.png" alt="">
 								<div class="product-details">
 									<h6>Ikan Balado</h6>
 									<div class="price">
@@ -339,7 +339,7 @@ session_start();
 						<!-- single product -->
 						<div class="col-lg-4 col-md-6">
 							<div class="single-product">
-								<img class="img-fluid" src="img/update/Nasgor.png" alt="">
+								<img class="img-fluid" src="img/category/Nasgor.png" alt="">
 								<div class="product-details">
 									<h6>Nasi Goreng Spesial</h6>
 									<div class="price">
@@ -370,7 +370,7 @@ session_start();
 						<!-- single product -->
 						<div class="col-lg-4 col-md-6">
 							<div class="single-product">
-								<img class="img-fluid" src="img/update/Pecel Ayam.png" alt="">
+								<img class="img-fluid" src="img/category/Pecel Ayam.png" alt="">
 								<div class="product-details">
 									<h6>Pecel Ayam</h6>
 									<div class="price">
@@ -401,7 +401,7 @@ session_start();
 						<!-- single product -->
 						<div class="col-lg-4 col-md-6">
 							<div class="single-product">
-								<img class="img-fluid" src="img/update/Rendang.png" alt="">
+								<img class="img-fluid" src="img/category/Rendang.png" alt="">
 								<div class="product-details">
 									<h6>Rendang</h6>
 									<div class="price">

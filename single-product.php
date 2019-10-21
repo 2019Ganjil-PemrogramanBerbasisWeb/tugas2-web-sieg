@@ -39,21 +39,21 @@
 							<li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
 							<li class="nav-item submenu dropdown active">
 								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-								 aria-expanded="false">Shop</a>
+								 aria-expanded="false">Belanja</a>
 								<ul class="dropdown-menu">
-									<li class="nav-item"><a class="nav-link" href="category.php">Kategori Belanja</a></li>
+									<li class="nav-item"><a class="nav-link" href="./category.php">Kategori Belanja</a></li>
 									<li class="nav-item active"><a class="nav-link" href="single-product.php">Detail Produk</a></li>
-									<li class="nav-item"><a class="nav-link" href="checkout.php">Checkout Belanja</a></li>
-									<li class="nav-item"><a class="nav-link" href="cart.php">Keranjang Belanja</a></li>
-									<li class="nav-item"><a class="nav-link" href="confirmation.php">Persetujuan</a></li>
+									<li class="nav-item"><a class="nav-link" href="./checkout.php">Checkout Belanja</a></li>
+									<li class="nav-item"><a class="nav-link" href="./cart.php">Keranjang Belanja</a></li>
+									<li class="nav-item"><a class="nav-link" href="./confirmation.php">Persetujuan</a></li>
 								</ul>
 							</li>
 							<li class="nav-item submenu dropdown">
 								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
 								 aria-expanded="false">Info</a>
 								<ul class="dropdown-menu">
-									<li class="nav-item"><a class="nav-link" href="blog.php">Info Nutrisi</a></li>
-									<li class="nav-item"><a class="nav-link" href="single-blog.php">Info Nutribox</a></li>
+									<li class="nav-item"><a class="nav-link" href="#">Info Nutrisi</a></li>
+									<li class="nav-item"><a class="nav-link" href="#">Info Nutribox</a></li>
 								</ul>
 							</li>
 							<li class="nav-item submenu dropdown">
@@ -70,7 +70,6 @@
 									<?php
 										
 									}?>
-									<li class="nav-item"><a class="nav-link" href="login.php">Login/Daftar</a></li>
 									<li class="nav-item"><a class="nav-link" href="tracking.php">Lacak Pesanan</a></li>
 									<li class="nav-item"><a class="nav-link" href="elements.php">Riwayat</a></li>
 								</ul>

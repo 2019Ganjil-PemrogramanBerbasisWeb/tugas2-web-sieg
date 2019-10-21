@@ -1,4 +1,4 @@
-<?php
+-<?php
 session_start();
 $servername = "localhost";
 $username = "root";
@@ -42,16 +42,16 @@ if ($conn->connect_error) {
             }
 
             elseif ($password != $cpassword) {
-                $msg = "Tolong cek ulang password anda"; 
+                $msg = "Tolong cek ulang password anda";
             }
             elseif (mysqli_num_rows($res_e) > 0) {
-					$r_email = "Maaf Email Sudah Teregristrasi!"; 	
+					$r_email = "Maaf Email Sudah Teregristrasi!";
 			}
-            
-            
+
+
                     else {
                         $hash = password_hash($password,PASSWORD_DEFAULT);
-                        $conn->query( "INSERT INTO `user`(`id`, `name`, `email`, `password`) 
+                        $conn->query( "INSERT INTO `user`(`id`, `name`, `email`, `password`)
                         Values ('','$name','$email','$hash')");
                         header("location: ./index.php"); }
 			}
@@ -75,7 +75,7 @@ if ($conn->connect_error) {
 	 			$_SESSION['name'] = $user->name;
 	 			$_SESSION['email'] = $user->email;
 	 			$_SESSION['user_id'] = $user->id;
-			
+
 	 			header("location: ./index.php");
 	 		} else { $msg="Password atau email salah";}
 	 		}
@@ -86,12 +86,12 @@ if ($conn->connect_error) {
 	 			$result = $stmt->get_result();
 	 			$user = $result->fetch_object();
 	 			if (mysqli_num_rows($result) > 0) {
-					
+
 	 		if ( password_verify( $_POST['password'], $user->password ) ) {
 	 			$_SESSION['name'] = $user->name;
 	 			$_SESSION['email'] = $user->email;
 	 			$_SESSION['user_id'] = $user->id;
-	
+
 	 			header("location: ./index.php");
 	 		} else { $msg="Password atau email salah";}
 	 		} else { $msg="Password atau email salah";}
@@ -165,7 +165,7 @@ if ($conn->connect_error) {
 									<li class="nav-item"><a class="nav-link" href="tracking.php">Lacak pesanan</a></li>
 									<li class="nav-item"><a class="nav-link" href="history.php">Riwayat</a></li>
 									<li class="nav-item"><a class="nav-link" href="logout.php">Logout</a></li>
-									<?php } 
+									<?php }
 									else { ?>
 									<li class="nav-item"><a class="nav-link" href="login.php"><?php echo "Daftar/Login"; ?></a></li>
 									<?php } ?>
@@ -262,7 +262,7 @@ if ($conn->connect_error) {
 			</div>
 		</div>
 	</section>
-	<?php 
+	<?php
 	include 'footer.html'
 	?>
 
