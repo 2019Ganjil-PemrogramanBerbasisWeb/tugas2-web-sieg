@@ -60,8 +60,6 @@ if(!isset($_SESSION['user_id'])){
 								 aria-expanded="false">Belanja</a>
 								<ul class="dropdown-menu">
 									<li class="nav-item"><a class="nav-link" href="category.html">Kategori Belanja</a></li>
-									<li class="nav-item"><a class="nav-link" href="single-product.html">Detail Produk</a></li>
-									<li class="nav-item"><a class="nav-link" href="checkout.html">Checkout Belanja</a></li>
 									<li class="nav-item active"><a class="nav-link" href="cart.html">Keranjang Belanja</a></li>
 									<li class="nav-item"><a class="nav-link" href="./confirmation.php">Persetujuan</a></li>
 								</ul>
