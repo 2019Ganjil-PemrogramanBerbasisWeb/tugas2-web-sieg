@@ -1,4 +1,4 @@
--<?php
+<?php
 session_start();
 $servername = "localhost";
 $username = "root";
@@ -14,7 +14,6 @@ if ($conn->connect_error) {
 		header('Location: ./index.php');
 		exit();
 	}
-
     $msg = "";
     $r_email = "";
 
@@ -47,8 +46,6 @@ if ($conn->connect_error) {
             elseif (mysqli_num_rows($res_e) > 0) {
 					$r_email = "Maaf Email Sudah Teregristrasi!";
 			}
-
-
                     else {
                         $hash = password_hash($password,PASSWORD_DEFAULT);
                         $conn->query( "INSERT INTO `user`(`id`, `name`, `email`, `password`)
@@ -65,21 +62,6 @@ if ($conn->connect_error) {
 	 			$msg = "Tolong Tulis Password anda";
 	 		}
 	 		else {
-	 		$stmt = $conn->prepare("SELECT * FROM user WHERE name = ?");
-	 		$stmt->bind_param('s', $_POST['username']);
-	 		$stmt->execute();
-	 		$result = $stmt->get_result();
-	 		$user = $result->fetch_object();
-	 		if (mysqli_num_rows($result) > 0) {
-	 		if ( password_verify( $_POST['password'], $user->password ) ) {
-	 			$_SESSION['name'] = $user->name;
-	 			$_SESSION['email'] = $user->email;
-	 			$_SESSION['user_id'] = $user->id;
-
-	 			header("location: ./index.php");
-	 		} else { $msg="Password atau email salah";}
-	 		}
-	 		else {
 	 			$stmt = $conn->prepare("SELECT * FROM user WHERE email = ?");
 	 			$stmt->bind_param('s', $_POST['username']);
 	 			$stmt->execute();
@@ -94,10 +76,9 @@ if ($conn->connect_error) {
 
 	 			header("location: ./index.php");
 	 		} else { $msg="Password atau email salah";}
-	 		} else { $msg="Password atau email salah";}
+	 		} 
 	 		}
-	 		}
-	 	}
+	 	}	
 ?>
 <!DOCTYPE html>
 <html lang="zxx" class="no-js">
@@ -141,11 +122,8 @@ if ($conn->connect_error) {
 								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
 								 aria-expanded="false">Shop</a>
 								<ul class="dropdown-menu">
-									<li class="nav-item"><a class="nav-link" href="category.php">Kategori Belanja</a></li>
-									<li class="nav-item"><a class="nav-link" href="single-product.php">Detail Produk</a></li>
-									<li class="nav-item"><a class="nav-link" href="checkout.php">Checkout Belanja</a></li>
-									<li class="nav-item"><a class="nav-link" href="cart.php">Keranjang Belanja</a></li>
-									<li class="nav-item"><a class="nav-link" href="confirmation.php">Persetujuan</a></li>
+									<li class="nav-item active"><a class="nav-link" href="./category.php">Kategori Belanja</a></li>
+									<li class="nav-item"><a class="nav-link" href="./cart.php">Keranjang Belanja</a></li>
 								</ul>
 							</li>
 							<li class="nav-item submenu dropdown">
