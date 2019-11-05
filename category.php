@@ -65,14 +65,6 @@ if(!isset($_SESSION['user_id'])){
 							</li>
 							<li class="nav-item submenu dropdown">
 								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-								 aria-expanded="false">info</a>
-								<ul class="dropdown-menu">
-									<li class="nav-item"><a class="nav-link" href="blog.html">info Nutrisi</a></li>
-									<li class="nav-item"><a class="nav-link" href="single-blog.html">info nutribox</a></li>
-								</ul>
-							</li>
-							<li class="nav-item submenu dropdown">
-								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
 								 aria-expanded="false">Akun</a>
 								<ul class="dropdown-menu">
 								<?php if(isset($_SESSION['name'])){ ?>
@@ -195,20 +187,6 @@ if(!isset($_SESSION['user_id'])){
 								<li class="filter-list"><input class="pixel-radio" type="radio" id="samsung" name="brand"><label for="samsung">Makanan Indonesia<span>(19)</span></label></li>
 							</ul>
 						</form>
-					</div>
-					<div class="common-filter">
-						<div class="head">Price</div>
-						<div class="price-range-area">
-							<div id="price-range"></div>
-							<div class="value-wrapper d-flex">
-								<div class="price">Price:</div>
-								<span>Rp.</span>
-								<div id="lower-value"></div>
-								<div class="to">to</div>
-								<span>Rp</span>
-								<div id="upper-value"></div>
-							</div>
-						</div>
 					</div>
 				</div>
 			</div>
