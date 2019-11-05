@@ -126,14 +126,6 @@ if ($conn->connect_error) {
 									<li class="nav-item"><a class="nav-link" href="./cart.php">Keranjang Belanja</a></li>
 								</ul>
 							</li>
-							<li class="nav-item submenu dropdown">
-								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-								 aria-expanded="false">Info</a>
-								<ul class="dropdown-menu">
-									<li class="nav-item"><a class="nav-link" href="blog.php">Info Nutrisi</a></li>
-									<li class="nav-item"><a class="nav-link" href="single-blog.php">Info Nutribox</a></li>
-								</ul>
-							</li>
 							<li class="nav-item submenu dropdown active">
 								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
 								 aria-expanded="false">Akun</a>
