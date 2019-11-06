@@ -67,7 +67,9 @@ session_start();
 							<li class="nav-item"><a class="nav-link" href="./contact.php">Bantuan</a></li>
 						</ul>
 						<ul class="nav navbar-nav navbar-right">
+						<?php if(isset($_SESSION['name'])){ ?>
 							<li class="nav-item"><a href="#" class="cart"><span class="ti-bag"></span></a></li>
+									<?php } ?>
 							<li class="nav-item">
 								<button class="search"><span class="lnr lnr-magnifier" id="search"></span></button>
 							</li>
