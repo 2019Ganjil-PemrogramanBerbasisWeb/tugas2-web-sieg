@@ -1,4 +1,5 @@
 <?php
+$awekawek = 'img/user/';
 $msg = "";
 if(isset($_POST['submit'])){
     $a="";
@@ -11,27 +12,12 @@ if(isset($_POST['submit'])){
     $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
     $uploadOk = 1;
     $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-    if(isset($_POST["submit"])) {
-        $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
-        if($check != false) {
-            $a = "Gambar tenanan - " . $check["mime"] . ".<br>";
-            $uploadOk = 1;
-        } else {
-            $a = "ra gambar weh.<br>";
-            $uploadOk = 0;
-        }
-    }
     if (file_exists($target_file)) {
         $b = "nama file dah ada.<br>";
         $uploadOk = 0;
     }
     if ($_FILES["fileToUpload"]["size"] > 500000) {
         $c = "kegeden cu.<br>";
-        $uploadOk = 0;
-    }
-    if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-    && $imageFileType != "gif" ) {
-        $d = "he he he kok aplod file ekstensi ne ." . $imageFileType .   ", kudune JPG, JPEG, PNG & GIF files ekstensi.<br>";
         $uploadOk = 0;
     }
     if ($uploadOk == 0) {
@@ -82,7 +68,7 @@ if(isset($_POST['submit'])){
 <body>
     <div class="container"><br>
 <?php if ($msg != "") { ?> <div class="alert alert-warning alert-dismissible fade show" role="alert">
-    <h4 class="alert-heading"><strong>ERROR!</strong></h4><hr>
+    <h4 class="alert-heading"><strong>Selamat!</strong></h4><hr>
                 <?php echo $msg;?>
   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
     <span aria-hidden="true">&times;</span>
@@ -93,7 +79,7 @@ if(isset($_POST['submit'])){
                 
             </div>
                 
-<form action="upload.php" method="post" enctype="multipart/form-data">
+<form action="upload tanpa database.php" method="post" enctype="multipart/form-data">
     Select image to upload:
     <input type="file" name="fileToUpload" id="fileToUpload">
     <input type="submit" value="Upload Image" name="submit">
@@ -105,19 +91,16 @@ if(isset($_POST['submit'])){
     <tr>
       <th scope="col">No</th>
       <th scope="col">Nama File</th>
-      <th scope="col">Preview</th>
       <th scope="col">Download</th>
     </tr>
   </thead>
   <tbody>
       <?php                 
-        $awekawek = 'img/user/';
         $awek = 1;
-        foreach(glob($awekawek.'*.{jpg,JPG,jpeg,JPEG,png,PNG}',GLOB_BRACE) as $file){
+        foreach(glob($awekawek.'*',GLOB_BRACE) as $file){
             $skrrr = basename($file);
             echo '<tr><th>'. $awek .
             "</th><td>". $skrrr .  
-            "</td><td><img src='" . $file . "' width='100px' height='100px'>" .
             "</td><td><a class='btn btn-primary' href='" . $file . "' role='button' download>Download</a></td></tr>"; $awek++;
         }
       ?>
