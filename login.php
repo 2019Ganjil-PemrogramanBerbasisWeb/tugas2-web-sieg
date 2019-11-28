@@ -5,7 +5,7 @@ $username = "root";
 $password = "";
 $dbname = "nutribox";
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli($servername, $username, $password, $dbname); 
 
 if ($conn->connect_error) {
     die("connection_failed  " . $conn->connect_error);
