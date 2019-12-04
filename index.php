@@ -53,8 +53,8 @@ session_start();
 								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
 								 aria-expanded="false">Akun</a>
 								<ul class="dropdown-menu">
-								<?php if(isset($_SESSION['name'])){ ?>
-									<li class="nav-item"><a class="nav-link" href="user.php"><?php echo $_SESSION['name']; ?></a></li>
+								<?php if(isset($_SESSION['fullName'])){ ?>
+									<li class="nav-item"><a class="nav-link" href="user.php"><?php echo $_SESSION['fullName'] ?></a></li>
 									<li class="nav-item"><a class="nav-link" href="tracking.php">Lacak pesanan</a></li>
 									<li class="nav-item"><a class="nav-link" href="history.php">Riwayat</a></li>
 									<li class="nav-item"><a class="nav-link" href="logout.php">Logout</a></li>

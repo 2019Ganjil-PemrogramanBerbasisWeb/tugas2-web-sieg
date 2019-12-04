@@ -1,5 +1,6 @@
 <?php
-session_start();
+require_once "asset/config.php";
+$loginURL = $gclient->createAuthUrl();
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -100,6 +101,7 @@ if ($conn->connect_error) {
 	<link rel="stylesheet" href="css/nouislider.min.css">
 	<link rel="stylesheet" href="css/bootstrap.css">
 	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/bootstrap-social.css">
 </head>
 
 <body>
@@ -165,6 +167,7 @@ if ($conn->connect_error) {
 			</div>
 		</div>
 	</header>
+	
 	<section class="banner-area organic-breadcrumb">
 		<div class="container">
 			<div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
@@ -226,9 +229,20 @@ if ($conn->connect_error) {
 							</div>
 							<div class="col-md-12 form-group">
 								<button type="submit" value="submit" class="primary-btn" name="login" id="login">Login</button>
+								
+						</form>
+									<div class="pt-3 mx-auto pb-1">
+										<button class="btn btn-block btn-social btn-google text-light" type="button" style="height: 40px" onclick="window.location='<?php echo $loginURL ?>';">
+											<span class="fa fa-google"></span> Log in with Google
+										</button>
+									</div>
+									<div class="pt-0 mx-auto">
+									<button class="btn btn-block btn-social btn-facebook text-light">
+											<span class="fa fa-facebook"></span> Log in with Facebook
+										</button>
+									</div>
 								<a href="#">Lupa Password?</a>
 							</div>
-						</form>
 					</div>
 				</div>
 			</div>
