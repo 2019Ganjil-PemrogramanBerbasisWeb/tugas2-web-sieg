@@ -14,8 +14,8 @@ else{
 
 $oAuth = new Google_Service_Oauth2($gclient);
 $userData = $oAuth->userinfo_v2_me->get();
-echo "<pre>";
-var_dump($userData);
+//echo "<pre>";
+//var_dump($userData);
 $_SESSION['fullName'] = $userData['name'];
 $_SESSION['email'] = $userData['email'];
 $_SESSION['gender'] = $userData['gender'];
